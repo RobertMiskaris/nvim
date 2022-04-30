@@ -21,6 +21,8 @@ return require('packer').startup(function()
     	-- Snippets plugin
    	use 'L3MON4D3/LuaSnip'
 
+	use 'phaazon/hop.nvim'
+
 
 	-- Utils
 	use {

@@ -296,3 +296,9 @@ require('telescope').setup{
     -- please take a look at the readme of the extension you want to configure
   }
 }
+
+
+require'hop'.setup({
+	vim.api.nvim_set_keymap('n', '<leader>f', "<cmd> lua require'hop'.hint_words()<cr>", {})
+}
+)
