@@ -9,6 +9,7 @@ return require('packer').startup(function()
 		run = ':TSUpdate'
 	}
 
+	-- Complete
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -18,10 +19,6 @@ return require('packer').startup(function()
 	use 'hrsh7th/nvim-cmp'
     	use 'saadparwaiz1/cmp_luasnip'
 	use 'onsails/lspkind.nvim'
-    	-- Snippets plugin
-   	use 'L3MON4D3/LuaSnip'
-
-	use 'phaazon/hop.nvim'
 
 
 	-- Utils
@@ -31,6 +28,8 @@ return require('packer').startup(function()
 		require('Comment').setup()
 	    end
 	}
+	use 'phaazon/hop.nvim'
+	use 'yamatsum/nvim-cursorline'
 
 	-- Buffer
 	use {
@@ -58,7 +57,6 @@ return require('packer').startup(function()
 	}
 
 	-- Color
-	use 'marko-cerovac/material.nvim'
 	use({
 		"catppuccin/nvim",
 		as = "catppuccin"

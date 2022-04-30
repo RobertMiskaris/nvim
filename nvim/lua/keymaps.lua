@@ -72,3 +72,5 @@ map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 --map('n', '<C-n>', [[<cmd>lua require('NvimTreeToggle').live_grep()<cr>]], default_opts)
 
 vim.cmd('nnoremap <C-n> :NvimTreeToggle<CR>')
+
+

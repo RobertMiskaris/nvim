@@ -1,8 +1,82 @@
 -----------------------
 ---- Color
 -----------------------
+local catppuccin = require("catppuccin")
+
+catppuccin.setup({
+transparent_background = false,
+term_colors = false,
+integrations = {
+	treesitter = true,
+	native_lsp = {
+		enabled = true,
+	},
+	-- lsp_trouble = true,
+	cmp = true,
+	-- gitgutter = false,
+	-- gitsigns = true,
+	-- telescope = true,
+	nvimtree = {
+		enabled = true,
+		show_root = false,
+		transparent_panel = false,
+	},
+	-- neotree = {
+	-- 	enabled = false,
+	-- 	show_root = false,
+	-- 	transparent_panel = false,
+	-- },
+	-- which_key = false,
+	-- indent_blankline = {
+	-- 	enabled = true,
+	-- 	colored_indent_levels = false,
+	-- },
+	-- dashboard = true,
+	-- neogit = false,
+	-- vim_sneak = false,
+	-- fern = false,
+	barbar = true,
+	-- bufferline = true,
+	-- markdown = true,
+	-- lightspeed = false,
+	-- ts_rainbow = false,
+	hop = true,
+	-- notify = true,
+	-- telekasten = true,
+	-- symbols_outline = true,
+}})
+
+
+
 
 vim.cmd 'colorscheme catppuccin'
+
+
+-----------------------
+---- Comment
+-----------------------
+
+require('Comment').setup()
+-- `gcc` - Toggles the current line using linewise comment
+-- `gbc` - Toggles the current line using blockwise comment
+
+
+-----------------------
+---- CursorLine
+-----------------------
+require('nvim-cursorline').setup {
+  cursorline = {
+    enable = true,
+    timeout = 1000,
+    number = false,
+  },
+  cursorword = {
+    enable = true,
+    min_length = 3,
+    hl = { underline = true },
+  }
+}
+
 
 -----------------------
 ---- Buffer
@@ -45,14 +119,14 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = false,
+  -- auto_close          = false,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
+  -- update_to_buf_dir   = {
+  --  enable = true,
+  --  auto_open = true,
+  -- },
   diagnostics = {
     enable = false,
     icons = {
@@ -85,7 +159,7 @@ require'nvim-tree'.setup {
     height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = false,
+    -- auto_resize = false,
     mappings = {
       custom_only = false,
       list = {}
@@ -169,7 +243,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 -- vim.o.completeopt = 'menuone,noselect'
 local luasnip = require 'luasnip'
 local cmp = require 'cmp'
-local lspkind = require('lspkind')
+local lspkind = require 'lspkind'
 
 
 cmp.setup({
@@ -238,7 +312,7 @@ require'nvim-treesitter.configs'.setup {
 	  "dockerfile",
 	  "yaml",
 	  "json",
-	  "dot", 
+	  "dot",
 	  "lua",
 	  "bash"},
 
@@ -302,3 +376,33 @@ require'hop'.setup({
 	vim.api.nvim_set_keymap('n', '<leader>f', "<cmd> lua require'hop'.hint_words()<cr>", {})
 }
 )
+
+-- Lsp Diagnostic
+
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
+
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--   buffer = bufnr,
+--   callback = function()
+--     local opts = {
+--       focusable = false,
+--       close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+--       border = 'rounded',
+--       source = 'always',
+--       prefix = ' ',
+--       scope = 'cursor',
+--     }
+--     vim.diagnostic.open_float(nil, opts)
+--   end
+-- })
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+-- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
+
