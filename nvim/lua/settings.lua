@@ -187,6 +187,7 @@ vim.opt.writebackup = false
 vim.opt.swapfile = false
 vim.opt.smarttab = true
 vim.opt.relativenumber = true
+vim.opt.scrolloff = 5
 
 -----------------------
 ---- LSP
@@ -260,6 +261,9 @@ cmp.setup({
 			end,
 		}),
 	},
+	completion = {
+		autocomplete = false,
+	},
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -298,7 +302,7 @@ cmp.setup({
 	sources = {
 		-- { name = "buffer", max_item_count = 10 },
 		{ name = "nvim_lsp", max_item_count = 10 },
-		-- { name = "luasnip", max_item_count = 10 }
+		{ name = "luasnip", max_item_count = 10 }
 	},
 })
 
@@ -338,37 +342,9 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-}
-
-require('telescope').setup{
-  defaults = {
-    -- Default configuration for telescope goes here:
-    -- config_key = value,
-    mappings = {
-      i = {
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        -- ["<C-h>"] = "which_key"
-      }
-    }
-  },
-  pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
-  },
-  extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
-  }
+  -- indent = {
+  --   enable = true
+  -- }
 }
 
 
@@ -406,3 +382,113 @@ vim.o.updatetime = 250
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 -- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
 
+
+
+--
+-- require'lsp_signature'.setup(
+-- {
+--   -- debug = false, -- set to true to enable debug logging
+--   -- log_path = vim.fn.stdpath("cache") .. "/lsp_signature.log", -- log dir when debug is on
+--   -- default is  ~/.cache/nvim/lsp_signature.log
+--   -- verbose = false, -- show debug line number
+--
+--   bind = true, -- This is mandatory, otherwise border config won't get registered.
+--                -- If you want to hook lspsaga or other signature handler, pls set to false
+--   doc_lines = 10, -- will show two lines of comment/doc(if there are more than two lines in doc, will be truncated);
+--                  -- set to 0 if you DO NOT want any API comments be shown
+--                  -- This setting only take effect in insert mode, it does not affect signature help in normal
+--                  -- mode, 10 by default
+--
+--   -- floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
+--
+--   floating_window_above_cur_line = true, -- try to place the floating above the current line when possible Note:
+--   -- will set to true when fully tested, set to false will use whichever side has more space
+--   -- this setting will be helpful if you do not want the PUM and floating win overlap
+--
+--   floating_window_off_x = 1, -- adjust float windows x position.
+--   floating_window_off_y = 1, -- adjust float windows y position.
+--
+--
+--   -- fix_pos = false,  -- set to true, the floating window will not auto-close until finish all parameters
+--   hint_enable = true, -- virtual hint enable
+--   -- hint_prefix = "🐼 ",  -- Panda for parameter
+--   -- hint_scheme = "String",
+--   -- hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
+--   max_height = 12, -- max height of signature floating_window, if content is more than max_height, you can scroll down
+--                    -- to view the hiding contents
+--   max_width = 80, -- max_width of signature floating_window, line will be wrapped if exceed max_width
+--   handler_opts = {
+--     border = "rounded"   -- double, rounded, single, shadow, none
+--   },
+--
+--   always_trigger = true, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58
+--
+--   auto_close_after = nil, -- autoclose signature float win after x sec, disabled if nil.
+--   extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
+--   zindex = 200, -- by default it will be on top of all floating windows, set to <= 50 send it to bottom
+--
+--   padding = '', -- character to pad on left and right of signature can be ' ', or '|'  etc
+--
+--   transparency = nil, -- disabled by default, allow floating win transparent value 1~100
+--   shadow_blend = 36, -- if you using shadow as border use this set the opacity
+--   shadow_guibg = 'Black', -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
+--   timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
+--   toggle_key = nil -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+-- }
+-- )
+
+
+
+------
+-- Telescope
+------
+
+require'telescope'.setup( {
+  defaults = {
+	  file_ignore_patterns = {
+		  'node_modules/.*',
+		  'venv/.*',
+		  '__pycache__/.*',
+		  '.git/.*'
+	  },
+
+  },
+  pickers = {
+    -- Default configuration for builtin pickers goes here:
+    -- picker_name = {
+    --   picker_config_key = value,
+    --   ...
+    -- }
+    -- Now the picker_config_key will be applied every time you call this
+    -- builtin picker
+  },
+  extensions = {
+    -- Your extension configuration goes here:
+    -- extension_name = {
+    --   extension_config_key = value,
+    -- }
+    -- please take a look at the readme of the extension you want to configure
+  },
+
+})
+
+
+require('nvim-autopairs').setup{}
+require('nvim-ts-autotag').setup()
+
+
+
+require('neoscroll').setup({
+    -- All these keys will be mapped to their corresponding default scrolling animation
+    mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+                '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+    hide_cursor = false,          -- Hide cursor while scrolling
+    stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+    use_local_scrolloff = true, -- Use the local scope of scrolloff instead of the global scope
+    respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+    cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+    easing_function = nil,       -- Default easing function
+    pre_hook = nil,              -- Function to run before the scrolling animation starts
+    post_hook = nil,             -- Function to run after the scrolling animation ends
+    performance_mode = false,    -- Disable "Performance Mode" on all buffers.
+})

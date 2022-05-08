@@ -9,7 +9,7 @@ return require('packer').startup(function()
 		run = ':TSUpdate'
 	}
 
-	-- Complete
+	-- Lsp
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/nvim-lsp-installer'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -18,7 +18,12 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
     	use 'saadparwaiz1/cmp_luasnip'
+	use 'L3MON4D3/LuaSnip'
 	use 'onsails/lspkind.nvim'
+
+	use {
+		"ray-x/lsp_signature.nvim",
+	}
 
 
 	-- Utils
@@ -28,8 +33,13 @@ return require('packer').startup(function()
 		require('Comment').setup()
 	    end
 	}
+	use 'karb94/neoscroll.nvim'
 	use 'phaazon/hop.nvim'
 	use 'yamatsum/nvim-cursorline'
+	-- use 'terryma/vim-multiple-cursors'
+
+	use 'windwp/nvim-ts-autotag'
+	use 'windwp/nvim-autopairs'
 
 	-- Buffer
 	use {

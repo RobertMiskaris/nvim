@@ -66,11 +66,15 @@ map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', opts)
 map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 
+-- telescope
+
+map('n', '<A-f>', ':Telescope find_files<CR>', opts)
+
 
 -- <S-F4> Поиск слова в модальном окошке
 
 --map('n', '<C-n>', [[<cmd>lua require('NvimTreeToggle').live_grep()<cr>]], default_opts)
 
-vim.cmd('nnoremap <C-n> :NvimTreeToggle<CR>')
+vim.cmd('nnoremap <C-t> :NvimTreeToggle<CR>')
 
 
