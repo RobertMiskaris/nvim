@@ -1,8 +1,8 @@
 -----------------------
 ---- Color
 -----------------------
-local catppuccin = require("catppuccin")
 
+local catppuccin = require("catppuccin")
 catppuccin.setup({
 transparent_background = false,
 term_colors = false,
@@ -45,7 +45,6 @@ integrations = {
 	-- telekasten = true,
 	-- symbols_outline = true,
 }})
-
 
 
 
@@ -158,7 +157,7 @@ require'nvim-tree'.setup {
     width = 30,
     height = 30,
     hide_root_folder = false,
-    side = 'left',
+    side = 'right',
     -- auto_resize = false,
     mappings = {
       custom_only = false,
@@ -188,7 +187,12 @@ vim.opt.swapfile = false
 vim.opt.smarttab = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 5
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+-- vim.g.catppuccin_flavour = "macchiato"
 
+vim.opt.clipboard = "unnamedplus"
 -----------------------
 ---- LSP
 -----------------------
@@ -225,6 +229,12 @@ local servers = {
 	"pyright",
 	"tsserver"
 }
+
+-- require('lspconfig').sqls.setup{
+--     on_attach = function(client, bufnr)
+--         require('sqls').on_attach(client, bufnr)
+--     end
+-- }
 
 lsp_installer.on_server_ready(function(server)
 	-- Specify the default options which we'll use to setup all servers
@@ -302,7 +312,8 @@ cmp.setup({
 	sources = {
 		-- { name = "buffer", max_item_count = 10 },
 		{ name = "nvim_lsp", max_item_count = 10 },
-		{ name = "luasnip", max_item_count = 10 }
+		{ name = "luasnip", max_item_count = 10 },
+		{ name = "vim-dadbod-completion", max_item_count = 10 },
 	},
 })
 
@@ -449,7 +460,10 @@ require'telescope'.setup( {
 		  'node_modules/.*',
 		  'venv/.*',
 		  '__pycache__/.*',
-		  '.git/.*'
+		  '.git/.*',
+		  'client/.*',
+		  'data/.*',
+		  'dist/.*'
 	  },
 
   },
@@ -478,17 +492,22 @@ require('nvim-ts-autotag').setup()
 
 
 
-require('neoscroll').setup({
-    -- All these keys will be mapped to their corresponding default scrolling animation
-    mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
-                '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
-    hide_cursor = false,          -- Hide cursor while scrolling
-    stop_eof = true,             -- Stop at <EOF> when scrolling downwards
-    use_local_scrolloff = true, -- Use the local scope of scrolloff instead of the global scope
-    respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
-    cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-    easing_function = nil,       -- Default easing function
-    pre_hook = nil,              -- Function to run before the scrolling animation starts
-    post_hook = nil,             -- Function to run after the scrolling animation ends
-    performance_mode = false,    -- Disable "Performance Mode" on all buffers.
-})
+-- require('neoscroll').setup({
+--     -- All these keys will be mapped to their corresponding default scrolling animation
+--     mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+--                 '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+--     hide_cursor = false,          -- Hide cursor while scrolling
+--     stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+--     use_local_scrolloff = true, -- Use the local scope of scrolloff instead of the global scope
+--     respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+--     cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+--     easing_function = nil,       -- Default easing function
+--     pre_hook = nil,              -- Function to run before the scrolling animation starts
+--     post_hook = nil,             -- Function to run after the scrolling animation ends
+--     performance_mode = false,    -- Disable "Performance Mode" on all buffers.
+-- })
+
+-- local neuron = require("neuron")
+--
+-- neuron.setup(
+-- )

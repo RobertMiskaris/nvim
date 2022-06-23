@@ -25,6 +25,11 @@ return require('packer').startup(function()
 		"ray-x/lsp_signature.nvim",
 	}
 
+	-- use 'nanotee/sqls.nvim'
+	use "tpope/vim-dadbod"
+	use "kristijanhusak/vim-dadbod-ui"
+	use "kristijanhusak/vim-dadbod-completion"
+
 
 	-- Utils
 	use {
@@ -40,6 +45,8 @@ return require('packer').startup(function()
 
 	use 'windwp/nvim-ts-autotag'
 	use 'windwp/nvim-autopairs'
+
+	use 'Pocco81/TrueZen.nvim'
 
 	-- Buffer
 	use {
@@ -71,4 +78,12 @@ return require('packer').startup(function()
 		"catppuccin/nvim",
 		as = "catppuccin"
 	})
+
+	-- Note
+	-- use 'nvim-lua/popup.nvim'
+	-- use 'oberblastmeister/neuron.nvim'
+	-- use "oberblastmeister/neuron.nvim"
+	-- use 'nvim-lua/popup.nvim'
+	-- use "nvim-lua/plenary.nvim"
+	-- use "nvim-telescope/telescope.nvim"
 end)

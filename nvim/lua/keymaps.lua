@@ -68,7 +68,9 @@ map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', opts)
 
 -- telescope
 
-map('n', '<A-f>', ':Telescope find_files<CR>', opts)
+-- map('n', '<A-f>', ':Telescope find_files<CR>', opts)
+map('n', '<F3>', ':Telescope current_buffer_fuzzy_find<CR>', opts)
+map('n', '<F4>', ':Telescope find_files<CR>', opts)
 
 
 -- <S-F4> Поиск слова в модальном окошке
