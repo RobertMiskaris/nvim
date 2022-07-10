@@ -1,5 +1,7 @@
-
+require('keymap')
 require('plugins')
-require('settings')
-require('keymaps')
-
+require('lsp')
+require('general')
+require('theme')
+require('telescope')
+require('util')
