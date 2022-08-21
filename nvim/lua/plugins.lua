@@ -1,89 +1,48 @@
+local status, packer = pcall(require, "packer")
+if (not status) then
+  print("Packer is not installed")
+  return
+end
+
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
+	use 'wbthomason/packer.nvim'
 
-	-- Language
+	-- Lsp
+	use 'neovim/nvim-lspconfig' -- Lsp Engine
+	use 'onsails/lspkind-nvim' -- vscode-like pictograms
+	-- use 'jose-elias-alvarez/null-ls.nvim' -- Linter, Diagnostic ...
+	use 'glepnir/lspsaga.nvim' -- UI
+	use 'L3MON4D3/LuaSnip' -- Snippet Engine
+	-- use 'ray-x/lsp_signature.nvim'
+	
+	-- Base Req
+	use 'nvim-lua/plenary.nvim'
+	
+	-- Completion
+	use 'hrsh7th/nvim-cmp' -- Capabilities Engine
+	use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+	use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+
+	-- Fzf
+	use 'nvim-telescope/telescope.nvim'
+	use { "nvim-telescope/telescope-file-browser.nvim" }
+
+	-- Code
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
-
-	-- Lsp
-	use 'neovim/nvim-lspconfig'
-	use 'williamboman/nvim-lsp-installer'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
-    	use 'saadparwaiz1/cmp_luasnip'
-	use 'L3MON4D3/LuaSnip'
-	use 'onsails/lspkind.nvim'
-
-	use {
-		"ray-x/lsp_signature.nvim",
-	}
-
-	-- use 'nanotee/sqls.nvim'
-	use "tpope/vim-dadbod"
-	use "kristijanhusak/vim-dadbod-ui"
-	use "kristijanhusak/vim-dadbod-completion"
-
-
-	-- Utils
-	use {
-	    'numToStr/Comment.nvim',
-	    config = function()
-		require('Comment').setup()
-	    end
-	}
-	use 'karb94/neoscroll.nvim'
-	use 'phaazon/hop.nvim'
-	use 'yamatsum/nvim-cursorline'
-	-- use 'terryma/vim-multiple-cursors'
-
-	use 'windwp/nvim-ts-autotag'
+	use 'kyazdani42/nvim-web-devicons'
 	use 'windwp/nvim-autopairs'
 
-	use 'Pocco81/TrueZen.nvim'
+	-- Nvim
+	use 'nvim-lualine/lualine.nvim'
+	use 'akinsho/bufferline.nvim'
+	use 'phaazon/hop.nvim'
 
-	-- Buffer
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
-
-	use {
-	    'kyazdani42/nvim-tree.lua',
-	    requires = {
-	      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-	    },
-	    config = function() require'nvim-tree'.setup {} end
-	}
-
-
-	use {
-		'romgrk/barbar.nvim',
-		requires = {'kyazdani42/nvim-web-devicons'}
-	}
-
-	use {
-	  'nvim-telescope/telescope.nvim',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-	}
-
-	-- Color
-	use({
-		"catppuccin/nvim",
-		as = "catppuccin"
-	})
-
-	-- Note
-	-- use 'nvim-lua/popup.nvim'
-	-- use 'oberblastmeister/neuron.nvim'
-	-- use "oberblastmeister/neuron.nvim"
-	-- use 'nvim-lua/popup.nvim'
-	-- use "nvim-lua/plenary.nvim"
-	-- use "nvim-telescope/telescope.nvim"
+	-- Theme
+	use { "catppuccin/nvim", as = "catppuccin" }
 end)

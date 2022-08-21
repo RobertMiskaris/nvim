@@ -1,5 +1,3 @@
-
+require('base')
 require('plugins')
-require('settings')
-require('keymaps')
-
+require('maps')

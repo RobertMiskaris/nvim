@@ -1,0 +1,28 @@
+-- local status, null_ls = pcall(require, "null-ls")
+-- if (not status) then return end
+
+-- local sources = {
+    -- null_ls.builtins.formatting.black,
+    --null_ls.builtins.formatting.autopep8.with({
+     --   prefer_local = "venv/.bin",
+    --}),
+    --null_ls.builtins.formatting.prettier.with({
+     --   prefer_local = "node_modules/.bin",
+    --}),
+    --null_ls.builtins.diagnostics.eslint.with({
+     --   prefer_local = "node_modules/.bin",
+    --}),
+    --null_ls.builtins.diagnostics.flake8.with({
+     --   prefer_local = ".venv/bin",
+    --}),
+    --null_ls.builtins.diagnostics.mypy.with({
+     --   prefer_local = ".venv/bin",
+    --}),
+    --null_ls.builtins.code_actions.eslint.with({
+     --   prefer_local = "node_modules/.bin",
+    --}),
+--}
+
+--null_ls.setup({
+ --   sources = sources,
+--})
