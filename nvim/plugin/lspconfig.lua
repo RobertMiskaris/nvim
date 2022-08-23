@@ -59,8 +59,7 @@ nvim_lsp.pyright.setup {
 	      autoSearchPaths = true,
 	      diagnosticMode = "workspace",
 	      useLibraryCodeForTypes = true,
-	      typeCheckingMode = "basic",
-		  strictParameterNoneValue = false
+	      typeCheckingMode = "off",
 	    }
 	  }
 	}

@@ -26,7 +26,19 @@ telescope.setup( {
   pickers = {
     find_files = {
       theme = "dropdown",
-    }
+    },
+	live_grep = {
+      theme = "dropdown",
+	},
+	buffers = {
+      theme = "dropdown",
+	},
+	current_buffer_fuzzy_find = {
+      theme = "dropdown",
+	},
+	diagnostics = {
+      theme = "dropdown",
+	},
   },
   extensions = {
   }
@@ -80,7 +92,7 @@ vim.keymap.set("n", "sf", function()
     hidden = true,
     grouped = true,
     previewer = false,
-    initial_mode = "insert",
-    layout_config = { height = 40 }
+    initial_mode = "normal",
+    layout_config = { height = 40 },
   })
 end)
