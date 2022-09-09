@@ -1,6 +1,6 @@
 vim.g.catppuccin_flavour = "macchiato"
 require("catppuccin").setup({
-	transparent_background = true,
+	transparent_background = false,
 	term_colors = true,
 	compile = {
 		enabled = true,
@@ -19,3 +19,4 @@ require("catppuccin").setup({
 
 })
 vim.cmd [[colorscheme catppuccin]]
+-- vim.cmd [[color catppuccin]]

@@ -9,8 +9,6 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<F11>'] = cmp.mapping.complete(),
     ['<F12>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({

@@ -9,7 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
-	-- use 'MunifTanjim/nui.nvim'
+	use 'MunifTanjim/nui.nvim'
 
 	-- Lsp
 	use 'neovim/nvim-lspconfig' -- Lsp Engine
@@ -37,8 +37,8 @@ return require('packer').startup(function(use)
 	use { "nvim-telescope/telescope-file-browser.nvim" }
 
 	-- File explorer
-	use 'kyazdani42/nvim-tree.lua'
-	-- use 'nvim-neo-tree/neo-tree.nvim'
+	-- use 'kyazdani42/nvim-tree.lua'
+	use 'nvim-neo-tree/neo-tree.nvim'
 
 	-- Code
 	use {

@@ -39,3 +39,7 @@ vim.opt.shiftwidth = 4
 
 
 vim.opt.breakindent = true
+
+
+-- UI
+vim.opt.guifont = { "FiraCode Nerd Font Mono", "h12" }

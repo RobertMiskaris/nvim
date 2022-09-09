@@ -52,7 +52,7 @@ nvim_lsp.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "python" },
-  single_file_support = true,
+  single_file_support = false,
   cmd = { "pyright-langserver", "--stdio" },
   settings = {
 	  python = {
