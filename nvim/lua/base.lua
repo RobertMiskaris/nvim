@@ -43,3 +43,4 @@ vim.opt.breakindent = true
 
 -- UI
 vim.opt.guifont = { "FiraCode Nerd Font Mono", "h12" }
+vim.g.neovide_cursor_vfx_mode= "sonicboom"

@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
 
 	-- Base Req
 	use 'nvim-lua/plenary.nvim'
-	
+
 	-- Completion
 	use 'hrsh7th/nvim-cmp' -- Capabilities Engine
 	use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
 
 	-- Fzf
 	use 'nvim-telescope/telescope.nvim'
-	use { "nvim-telescope/telescope-file-browser.nvim" }
+	-- use { "nvim-telescope/telescope-file-browser.nvim" }
 
 	-- File explorer
 	-- use 'kyazdani42/nvim-tree.lua'
@@ -51,8 +51,10 @@ return require('packer').startup(function(use)
 
 	-- Nvim
 	use 'nvim-lualine/lualine.nvim'
-	use 'akinsho/bufferline.nvim'
 	use 'phaazon/hop.nvim'
+	use 'Pocco81/true-zen.nvim'
+	-- use 'folke/zen-mode.nvim'
+	use 'karb94/neoscroll.nvim'
 
 	-- Theme
 	use { "catppuccin/nvim", as = "catppuccin" }
