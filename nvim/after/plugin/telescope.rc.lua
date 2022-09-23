@@ -40,7 +40,7 @@ telescope.setup( {
 --vim.api.nvim_set_keymap('n', 'F', ':Telescope find_files<CR>', {})
 --vim.api.nvim_set_keymap('n', 'f', ':Telescope current_buffer_fuzzy_find<CR>', {})
 
-telescope.load_extension("file_browser")
+--telescope.load_extension("file_browser")
 
 
 vim.keymap.set('n', ';f',
