@@ -4,7 +4,7 @@ require("catppuccin").setup({
 	term_colors = true,
 	compile = {
 		enabled = true,
-		path = vim.fn.stdpath "cache" .. "/catppuccin",
+		path = vim.fn.stdpath("cache") .. "/catppuccin",
 	},
 	integrations = {
 		treesitter = true,
@@ -14,9 +14,8 @@ require("catppuccin").setup({
 		cmp = true,
 		hop = true,
 		lsp_saga = false,
-		telescope = true
-	}
-
+		telescope = true,
+	},
 })
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd([[colorscheme catppuccin]])
 -- vim.cmd [[color catppuccin]]

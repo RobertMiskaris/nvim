@@ -1,6 +1,7 @@
 local status, zen = pcall(require, "true-zen")
-if (not status) then return end
-
+if not status then
+	return
+end
 
 zen.setup({
 	modes = { -- configurations per mode
@@ -22,15 +23,14 @@ zen.setup({
 				open_pre = nil,
 				open_pos = nil,
 				close_pre = nil,
-				close_pos = nil
+				close_pos = nil,
 			},
 		},
 	},
 	integrations = {
 		twilight = false, -- enable twilight (ataraxis)
-		lualine = true -- hide nvim-lualine (ataraxis)
+		lualine = true, -- hide nvim-lualine (ataraxis)
 	},
 })
 
-
-vim.keymap.set('n', 'zm', zen.ataraxis, { noremap = true })
+vim.keymap.set("n", "zm", zen.ataraxis, { noremap = true })
