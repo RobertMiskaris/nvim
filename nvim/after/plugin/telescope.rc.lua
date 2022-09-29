@@ -3,6 +3,7 @@ if not status then
 	return
 end
 local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
 
 telescope.setup({
 	defaults = {
@@ -14,6 +15,11 @@ telescope.setup({
 			"client/.*",
 			"data/.*",
 			"dist/.*",
+		},
+		mappings = {
+			i = {
+				["<esc>"] = actions.close,
+			},
 		},
 	},
 	pickers = {

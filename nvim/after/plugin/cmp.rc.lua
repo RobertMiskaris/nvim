@@ -16,6 +16,7 @@ cmp.setup({
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<F11>"] = cmp.mapping.complete(),
+		["<F10>"] = cmp.mapping.complete(),
 		["<F12>"] = cmp.mapping.close(),
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
