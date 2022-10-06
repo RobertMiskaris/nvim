@@ -33,6 +33,12 @@ return require("packer").startup(function(use)
 	-- Fzf
 	use("nvim-telescope/telescope.nvim")
 
+	-- Terminal
+	--use("akinsho/toggleterm.nvim")
+
+	-- Git
+	use("kdheepak/lazygit.nvim")
+
 	-- File explorer
 	use("nvim-neo-tree/neo-tree.nvim")
 
@@ -41,7 +47,6 @@ return require("packer").startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
-	use("kyazdani42/nvim-web-devicons")
 	use("windwp/nvim-autopairs")
 
 	-- Nvim
@@ -49,8 +54,14 @@ return require("packer").startup(function(use)
 	use("phaazon/hop.nvim")
 	use("Pocco81/true-zen.nvim")
 	use("karb94/neoscroll.nvim")
-	use("lewis6991/impatient.nvim") -- cashe nvim
+	--use("lewis6991/impatient.nvim") -- cashe nvim
 
+	-- Database
+	-- use { 'tpope/vim-dadbod' }
+	-- use { 'kristijanhusak/vim-dadbod-ui' }
+
+	-- Icons
+	use("kyazdani42/nvim-web-devicons")
 	-- Theme
 	use({ "catppuccin/nvim", as = "catppuccin" })
 end)

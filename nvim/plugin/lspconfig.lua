@@ -1,4 +1,4 @@
---vim.lsp.set_log_level("debug")
+-- vim.lsp.set_log_level("debug")
 
 local status, nvim_lsp = pcall(require, "lspconfig")
 if not status then
@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
 
 	buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	buf_set_keymap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+	buf_set_keymap("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
