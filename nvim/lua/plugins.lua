@@ -34,7 +34,7 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 
 	-- Terminal
-	use "numToStr/FTerm.nvim"
+	use("numToStr/FTerm.nvim")
 
 	-- Git
 	use("kdheepak/lazygit.nvim")
