@@ -19,5 +19,5 @@ vim.keymap.set("n", "gp", "<Cmd>Lspsaga preview_definition<CR>", opts)
 vim.keymap.set("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
 
 -- Terminal
-vim.keymap.set("n", "<F3>", "<cmd>Lspsaga open_floaterm<CR>", opts)
-vim.keymap.set("t", "<F3>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opts)
+--vim.keymap.set("n", "<F3>", "<cmd>Lspsaga open_floaterm<CR>", opts)
+--vim.keymap.set("t", "<F3>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opts)

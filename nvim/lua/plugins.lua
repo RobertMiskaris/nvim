@@ -34,7 +34,7 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 
 	-- Terminal
-	--use("akinsho/toggleterm.nvim")
+	use "numToStr/FTerm.nvim"
 
 	-- Git
 	use("kdheepak/lazygit.nvim")
@@ -55,10 +55,6 @@ return require("packer").startup(function(use)
 	use("Pocco81/true-zen.nvim")
 	use("karb94/neoscroll.nvim")
 	--use("lewis6991/impatient.nvim") -- cashe nvim
-
-	-- Database
-	-- use { 'tpope/vim-dadbod' }
-	-- use { 'kristijanhusak/vim-dadbod-ui' }
 
 	-- Icons
 	use("kyazdani42/nvim-web-devicons")
