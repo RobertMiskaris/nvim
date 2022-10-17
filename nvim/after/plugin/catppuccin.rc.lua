@@ -13,8 +13,9 @@ require("catppuccin").setup({
 		},
 		cmp = true,
 		hop = true,
-		lsp_saga = false,
+		-- lsp_saga = true,
 		telescope = true,
+		-- neotree = true,
 	},
 })
 vim.cmd([[colorscheme catppuccin]])

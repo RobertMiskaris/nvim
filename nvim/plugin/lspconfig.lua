@@ -29,7 +29,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Diagnostic
 
@@ -50,7 +50,7 @@ vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {f
 
 nvim_lsp.pyright.setup({
 	on_attach = on_attach,
-	capabilities = capabilities,
+-- 	capabilities = capabilities,
 	filetypes = { "python" },
 	single_file_support = false,
 	cmd = { "pyright-langserver", "--stdio" },
@@ -70,7 +70,7 @@ nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 	cmd = { "typescript-language-server", "--stdio" },
-	capabilities = capabilities,
+--	capabilities = capabilities,
 })
 
 nvim_lsp.gopls.setup({

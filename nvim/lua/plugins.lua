@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("phaazon/hop.nvim")
 	use("Pocco81/true-zen.nvim")
-	use("karb94/neoscroll.nvim")
+	--use("karb94/neoscroll.nvim")
 	--use("lewis6991/impatient.nvim") -- cashe nvim
 
 	-- Icons
