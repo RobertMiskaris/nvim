@@ -5,10 +5,8 @@ if not status then
 	return
 end
 
-util = require("lspconfig/util")
+local util = require("lspconfig/util")
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -20,7 +18,6 @@ local on_attach = function(client, bufnr)
 
 	--Enable completion triggered by <c-x><c-o>
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-
 	-- Mappings.
 	local opts = { noremap = true, silent = true }
 
@@ -38,19 +35,18 @@ vim.diagnostic.config({
 	signs = true,
 	underline = true,
 	update_in_insert = false,
-	severity_sort = true,
+	severity_sort = false,
 })
 
 vim.o.updatetime = 0
 -- vim.g.diagnostics_visible = true
 
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
+vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])
 
 -- The main servers
-
 nvim_lsp.pyright.setup({
 	on_attach = on_attach,
--- 	capabilities = capabilities,
+	-- 	capabilities = capabilities,
 	filetypes = { "python" },
 	single_file_support = false,
 	cmd = { "pyright-langserver", "--stdio" },
@@ -70,7 +66,6 @@ nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
 	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 	cmd = { "typescript-language-server", "--stdio" },
---	capabilities = capabilities,
 })
 
 nvim_lsp.gopls.setup({
@@ -97,7 +92,6 @@ nvim_lsp.sumneko_lua.setup({
 			},
 
 			workspace = {
-				-- Make the server aware of Neovim runtime files
 				library = vim.api.nvim_get_runtime_file("", true),
 				checkThirdParty = false,
 			},

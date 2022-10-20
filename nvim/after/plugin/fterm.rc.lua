@@ -4,6 +4,7 @@ if not status then
 end
 
 fterm.setup({
+	-- cmd = os.getenv('SHELL'),
 	border = "double",
 	dimensions = {
 		height = 0.9,
@@ -13,3 +14,5 @@ fterm.setup({
 
 vim.keymap.set("n", "<F3>", '<CMD>lua require("FTerm").toggle()<CR>')
 vim.keymap.set("t", "<F3>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
+vim.cmd("tnoremap <Esc> <C-\\><C-n>")
