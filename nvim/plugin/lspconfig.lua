@@ -29,19 +29,28 @@ end
 -- local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Diagnostic
+local signs = {
+	Error = "",
+	Warning = "",
+	Hint = "",
+	Information = "",
+}
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 
 vim.diagnostic.config({
 	virtual_text = false,
 	signs = true,
 	underline = true,
 	update_in_insert = false,
-	severity_sort = false,
+	severity_sort = true,
 })
-
 vim.o.updatetime = 0
--- vim.g.diagnostics_visible = true
 
-vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])
+-- Command for float window
+--vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])
 
 -- The main servers
 nvim_lsp.pyright.setup({
