@@ -22,6 +22,13 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
+		["<C-s>"] = cmp.mapping.complete({
+			config = {
+				sources = {
+					{ name = "buffer" },
+				},
+			},
+		}),
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp", max_item_count = 10 },

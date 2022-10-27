@@ -9,6 +9,7 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("MunifTanjim/nui.nvim")
+	use("nvim-lua/plenary.nvim")
 
 	-- Lsp
 	use("neovim/nvim-lspconfig") -- Lsp Engine
@@ -21,9 +22,6 @@ return require("packer").startup(function(use)
 	-- Lsp installer
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-
-	-- Base Req
-	use("nvim-lua/plenary.nvim")
 
 	-- Completion
 	use("hrsh7th/nvim-cmp") -- Capabilities Engine
@@ -53,11 +51,13 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("phaazon/hop.nvim")
 	use("Pocco81/true-zen.nvim")
-	--use("karb94/neoscroll.nvim")
+	use("rcarriga/nvim-notify")
+	-- use({ "folke/noice.nvim" })
 	--use("lewis6991/impatient.nvim") -- cashe nvim
 
 	-- Icons
 	use("kyazdani42/nvim-web-devicons")
+
 	-- Theme
 	use({ "catppuccin/nvim", as = "catppuccin" })
 end)
