@@ -33,4 +33,4 @@ zen.setup({
 	},
 })
 
--- vim.keymap.set("n", "z", zen.ataraxis, { noremap = true })
+vim.keymap.set("n", "zm", zen.ataraxis, { noremap = true })

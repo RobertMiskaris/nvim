@@ -21,7 +21,7 @@ local on_attach = function(client, bufnr)
 	-- Mappings.
 	local opts = { noremap = true, silent = true }
 
-	buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+	buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	buf_set_keymap("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 end
@@ -57,7 +57,7 @@ nvim_lsp.pyright.setup({
 	on_attach = on_attach,
 	-- 	capabilities = capabilities,
 	filetypes = { "python" },
-	single_file_support = false,
+	single_file_support = true,
 	cmd = { "pyright-langserver", "--stdio" },
 	settings = {
 		python = {
@@ -110,3 +110,4 @@ nvim_lsp.sumneko_lua.setup({
 
 -- Utils LSP
 nvim_lsp.bashls.setup({})
+nvim_lsp.jsonls.setup({})

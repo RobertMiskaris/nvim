@@ -10,5 +10,5 @@ end
 mason.setup({})
 
 lspconfig.setup({
-	ensure_installed = { "sumneko_lua", "bashls" },
+	ensure_installed = { "sumneko_lua", "bashls", "jsonls" },
 })

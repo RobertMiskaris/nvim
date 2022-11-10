@@ -53,7 +53,7 @@ return require("packer").startup(function(use)
 	use("Pocco81/true-zen.nvim")
 	use("rcarriga/nvim-notify")
 	-- use({ "folke/noice.nvim" })
-	--use("lewis6991/impatient.nvim") -- cashe nvim
+	use("lewis6991/impatient.nvim") -- cashe nvim
 
 	-- Icons
 	use("kyazdani42/nvim-web-devicons")
