@@ -30,6 +30,6 @@ vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
 
 keymap.set("", "q", "<Nop>")
-keymap.set("", "\'", "<Nop>")
+-- keymap.set("", "\'", "<Nop>")
 -- keymap.set("", "<C-m>", "<Nop>")
 -- keymap.set("", "<C-n>", "<Nop>")
