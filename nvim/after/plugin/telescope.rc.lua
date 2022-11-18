@@ -61,9 +61,9 @@ vim.keymap.set("n", ";t", function()
 	builtin.help_tags()
 end)
 
-vim.keymap.set("n", "/", function()
-	builtin.current_buffer_fuzzy_find()
-end)
+-- vim.keymap.set("n", "/", function()
+-- 	builtin.current_buffer_fuzzy_find()
+-- end)
 
 vim.keymap.set("n", ";;", function()
 	builtin.resume()

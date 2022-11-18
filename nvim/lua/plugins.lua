@@ -45,15 +45,18 @@ return require("packer").startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	-- use('nvim-treesitter/nvim-treesitter-textobjects')
 	use("windwp/nvim-autopairs")
+	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Nvim
 	use("nvim-lualine/lualine.nvim")
 	use("phaazon/hop.nvim")
 	use("Pocco81/true-zen.nvim")
 	use("rcarriga/nvim-notify")
-	-- use({ "folke/noice.nvim" })
+	use({ "folke/noice.nvim" })
 	use("lewis6991/impatient.nvim") -- cashe nvim
+	use("folke/which-key.nvim")
 
 	-- Icons
 	use("kyazdani42/nvim-web-devicons")
