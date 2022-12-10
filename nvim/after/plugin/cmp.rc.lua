@@ -8,6 +8,7 @@ end
 
 local lspkind = require("lspkind")
 
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -17,6 +18,8 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<F11>"] = cmp.mapping.complete(),
 		["<F10>"] = cmp.mapping.complete(),
+		["<C-c>"] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.abort(),
 		-- ["<C-m>"] = cmp.mapping.complete(),
 		["<F12>"] = cmp.mapping.close(),
 		["<CR>"] = cmp.mapping.confirm({
@@ -26,14 +29,14 @@ cmp.setup({
 		["<C-s>"] = cmp.mapping.complete({
 			config = {
 				sources = {
-					{ name = "buffer" },
+					{ name = "buffer", max_item_count = 5 },
 				},
 			},
 		}),
 	}),
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp", max_item_count = 10 },
-		{ name = "luasnip", max_item_count = 10 },
+		{ name = "nvim_lsp", max_item_count = 5 },
+		{ name = "luasnip", max_item_count = 5 },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),

@@ -15,6 +15,8 @@ require("catppuccin").setup({
 		hop = true,
 		-- lsp_saga = true,
 		telescope = true,
+		harpoon = true,
+		noice = true,
 		-- neotree = true,
 	},
 })

@@ -5,6 +5,8 @@ end
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
 
+telescope.load_extension("harpoon")
+
 telescope.setup({
 	defaults = {
 		file_ignore_patterns = {
@@ -65,9 +67,9 @@ end)
 -- 	builtin.current_buffer_fuzzy_find()
 -- end)
 
-vim.keymap.set("n", ";;", function()
-	builtin.resume()
-end)
+-- vim.keymap.set("n", ";;", function()
+--	builtin.resume()
+-- end)
 
 vim.keymap.set("n", ";e", function()
 	builtin.diagnostics()

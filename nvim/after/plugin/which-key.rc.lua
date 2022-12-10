@@ -7,6 +7,12 @@ wk.register({
 	["<F6>"] = { "<cmd>NeoTreeFloat<cr>", "Tree" },
 	["ss"] = { "<cmd>split<Return><C-w>w", "Split" },
 	["sv"] = { "<cmd>vsplit<Return><C-w>w", "SplitVertical" },
+	["<Leader>ds"] = { "<cmd>Neogen<cr>", "Neogen" },
+	[";;"] = { "<cmd>Telescope harpoon marks theme=dropdown<cr>", "HarpoonFinder" },
+	["<Leader>af"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "HarpoonAddFile" },
+	["<Leader>nb"] = { "<cmd>lua require('harpoon.ui').nav_next()<cr>", "HarpoonMoveNext" },
+	["<Leader>pb"] = { "<cmd>lua require('harpoon.ui').nav_prev()<cr>", "HarpoonMovePrev" },
+	["<F7>"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "HarpoonUI" },
 })
 
 wk.setup({

@@ -23,6 +23,9 @@ ts.setup({
 		"python",
 		"go",
 		"dockerfile",
+		"javascript",
+		"markdown",
+		"lua"
 	},
 	autotag = {
 		enable = true,

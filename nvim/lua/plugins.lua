@@ -17,7 +17,7 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- Linter, Diagnostic ...
 	use("glepnir/lspsaga.nvim") -- UI
 	use("L3MON4D3/LuaSnip") -- Snippet Engine
-	-- use 'ray-x/lsp_signature.nvim'
+	use("ray-x/lsp_signature.nvim")
 
 	-- Lsp installer
 	use("williamboman/mason.nvim")
@@ -45,6 +45,7 @@ return require("packer").startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use("danymat/neogen")
 	-- use('nvim-treesitter/nvim-treesitter-textobjects')
 	use("windwp/nvim-autopairs")
 	use("lukas-reineke/indent-blankline.nvim")
@@ -53,10 +54,12 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 	use("phaazon/hop.nvim")
 	use("Pocco81/true-zen.nvim")
-	use("rcarriga/nvim-notify")
-	use({ "folke/noice.nvim" })
+	-- use("rcarriga/nvim-notify")
+	-- use({ "folke/noice.nvim" })
 	use("lewis6991/impatient.nvim") -- cashe nvim
 	use("folke/which-key.nvim")
+	use("ThePrimeagen/harpoon")
+	-- use("chentoast/marks.nvim")
 
 	-- Icons
 	use("kyazdani42/nvim-web-devicons")

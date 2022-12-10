@@ -14,8 +14,8 @@ zen.setup({
 			},
 			quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
 			padding = { -- padding windows
-				left = 52,
-				right = 52,
+				left = 30,
+				right = 30,
 				top = 0,
 				bottom = 0,
 			},
@@ -28,8 +28,11 @@ zen.setup({
 		},
 	},
 	integrations = {
-		twilight = false, -- enable twilight (ataraxis)
 		lualine = true, -- hide nvim-lualine (ataraxis)
+		kitty = { -- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
+			enabled = false,
+			font = "+3"
+		},
 	},
 })
 

@@ -1,4 +1,4 @@
--- vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("debug")
 
 local status, nvim_lsp = pcall(require, "lspconfig")
 if not status then
@@ -73,7 +73,7 @@ nvim_lsp.pyright.setup({
 
 nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
-	filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+	filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
 	cmd = { "typescript-language-server", "--stdio" },
 })
 
