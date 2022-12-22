@@ -1,4 +1,4 @@
-vim.lsp.set_log_level("debug")
+-- vim.lsp.set_log_level("debug")
 
 local status, nvim_lsp = pcall(require, "lspconfig")
 if not status then
@@ -71,6 +71,25 @@ nvim_lsp.pyright.setup({
 	},
 })
 
+--nvim_lsp.pylsp.setup({
+--	on_attach = on_attach,
+--	-- 	capabilities = capabilities,
+--	filetypes = { "python" },
+--	single_file_support = true,
+--	cmd = { "pylsp" },
+--	settings = {
+--		pylsp = {
+--			plugins = {
+--				pycodestyle = {
+--					ignore = { "W391" },
+--					maxLineLength = 100,
+--				},
+--				mypy = {}
+--			},
+--		},
+--	},
+-- })
+
 nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
 	filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
@@ -107,6 +126,36 @@ nvim_lsp.sumneko_lua.setup({
 		},
 	},
 })
+
+-- nvim_lsp.efm.setup({
+--    filetypes = { "python" },
+--   on_attach = on_attach,
+--    init_options = {documentFormatting = true},
+--    settings = {
+--        rootMarkers = {".git/"},
+--    }
+-- })
+
+-- nvim_lsp.diagnosticls.setup({
+--	cmd = { "diagnostic-languageserver", "--stdio" },
+--	single_file_support = true,
+--	settings = {
+--		languageserver = {
+--			dls = {
+--				linters = {
+--					mypy = {
+--						sourceName = "mypy",
+--						command = "mypy",
+--						args = { "--no-color-output" },
+--						securities = {
+--							error = "error",
+--						},
+--					},
+--				},
+--			},
+--		},
+--	},
+-- })
 
 -- Utils LSP
 nvim_lsp.bashls.setup({})

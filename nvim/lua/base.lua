@@ -49,3 +49,6 @@ vim.g.neovide_hide_mouse_when_typing = 1
 vim.g.neovide_underline_automatic_scaling = 1
 vim.g.neovide_refresh_rate = 120
 vim.g.neovide_input_macos_alt_is_meta = 1
+
+
+-- vim.cmd[[highlight! BorderBG guibg=NONE]]

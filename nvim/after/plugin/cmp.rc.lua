@@ -8,8 +8,31 @@ end
 
 local lspkind = require("lspkind")
 
+vim.o.completeopt = "menu,menuone,noselect"
+
+local function border(hl_name)
+	return {
+		{ "╭", hl_name },
+		{ "─", hl_name },
+		{ "╮", hl_name },
+		{ "│", hl_name },
+		{ "╯", hl_name },
+		{ "─", hl_name },
+		{ "╰", hl_name },
+		{ "│", hl_name },
+	}
+end
 
 cmp.setup({
+	window = {
+		completion = {
+			border = border("CmpBorder"),
+			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+		},
+		documentation = {
+			border = border("CmpDocBorder"),
+		},
+	},
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -19,7 +42,7 @@ cmp.setup({
 		["<F11>"] = cmp.mapping.complete(),
 		["<F10>"] = cmp.mapping.complete(),
 		["<C-c>"] = cmp.mapping.complete(),
-		['<C-e>'] = cmp.mapping.abort(),
+		["<C-e>"] = cmp.mapping.abort(),
 		-- ["<C-m>"] = cmp.mapping.complete(),
 		["<F12>"] = cmp.mapping.close(),
 		["<CR>"] = cmp.mapping.confirm({
@@ -42,11 +65,6 @@ cmp.setup({
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
 	},
 	completion = {
-		autocomplete = false,
+		-- autocomplete = false,
 	},
 })
-
-vim.cmd([[
-  set completeopt=menuone,noinsert,noselect
-  highlight! default link CmpItemKind CmpItemMenuDefault
-]])

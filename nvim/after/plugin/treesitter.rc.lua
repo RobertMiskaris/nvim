@@ -6,6 +6,7 @@ end
 ts.setup({
 	highlight = {
 		enable = true,
+		use_languagetree = true,
 		disable = {},
 	},
 	indent = {
@@ -25,7 +26,7 @@ ts.setup({
 		"dockerfile",
 		"javascript",
 		"markdown",
-		"lua"
+		"lua",
 	},
 	autotag = {
 		enable = true,
