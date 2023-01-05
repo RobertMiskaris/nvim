@@ -52,6 +52,7 @@ return require("packer").startup(function(use)
 	use("danymat/neogen")
 	use("windwp/nvim-autopairs")
 	use("lukas-reineke/indent-blankline.nvim")
+	use("numToStr/Comment.nvim")
 
 	-- Nvim
 	use("nvim-lualine/lualine.nvim")
